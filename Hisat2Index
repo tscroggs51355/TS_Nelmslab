@@ -3,10 +3,42 @@
 
 #run hisat2 build 
 
-#hisat2 alignment 
+#hisat2 alignment
 
-module load hisat2 
-hisat2 -p8 --dta -x maize_tran -1 
-SRX501434_1.fastq.gz -2 
-SRX501434_2.fastq.gz -S SRR_chrx.sam 
+#!/bin/bash
+#SBATCH --job-name=run_hisat2index       # Job name
+#SBATCH --partition=batch              # Partition (queue) name, i.e., highmem_p
+#SBATCH --ntasks=1                          # Run a single task
+#SBATCH --cpus-per-task=28                  # Number of CPU cores per task
+#SBATCH --mem=180gb                          # Job memory request
+#SBATCH --time=72:00:00                     # Time limit hrs:min:sec
+#SBATCH --output=runhisat2.%j.out         # Standard output log
+#SBATCH --error=runhisat2.%j.err          # Standard error log
+#SBATCH --mail-type=END,FAIL                # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=taylor.strayhorn@uga.edu   # Where to send mail
+#SBATCH --export=NONE                       # do not load any env variables to compute node
 
+
+module load HISAT2/2.2.1-foss-2019b
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205303_1.fastq.gz -2 SRR1205304_1.fastq.gz -S SRR1205303.4.sam 
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205305_1.fastq.gz -2 SRR1205306_1.fastq.gz -S SRR1205305.6.sam 
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205307_1.fastq.gz -2 SRR1205308_1.fastq.gz -S SRR1205307.8.sam 
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205309_1.fastq.gz -2 SRR12053010_1.fastq.gz -S SRR1205309.10.sam 
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205311_1.fastq.gz -2 SRR1205312_1.fastq.gz -S SRR1205311.12.sam 
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205313_1.fastq.gz -2 SRR1205314_1.fastq.gz -S SRR1205313.14.sam
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205315_1.fastq.gz -2 SRR1205316_1.fastq.gz -S SRR1205315.16.sam
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205317_1.fastq.gz -2 SRR1205318_1.fastq.gz -S SRR1205317.18.sam
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205319_1.fastq.gz -2 SRR1205320_1.fastq.gz -S SRR1205319.20.sam
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205321_1.fastq.gz -2 SRR1205322_1.fastq.gz -S SRR1205321.22.sam
+
+hisat2 -p8 --dta --no-softclip -x maize_tran -1 SRR1205323_1.fastq.gz -2 SRR1205324_1.fastq.gz -S SRR1205323.24.sam
