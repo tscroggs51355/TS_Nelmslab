@@ -1,0 +1,12 @@
+#Download the GFF3 & .fa files from Maize GDB 
+#Convert the GFF3 into a GTF using the R script on benchling 
+
+#run hisat2 build 
+
+#hisat2 alignment 
+
+module load hisat2 
+hisat2 -p8 --dta -x maize_tran -1 
+SRX501434_1.fastq.gz -2 
+SRX501434_2.fastq.gz -S SRR_chrx.sam 
+
