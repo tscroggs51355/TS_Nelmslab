@@ -1,0 +1,16 @@
+#for single end data (not Compressed)n
+fastp -i in.fq -o out.fq
+
+#for paired end data (gziped) 
+fastp -i in.R1.fq.gz -I in.R2.fq.gz -o out.R1.fq.gz -O out.R2.fq.gz
+#read 1 = -I or --in2 
+#read 2 = -0 or --out2 
+
+#BRADS SCRIPT   
+mkdir "Mapped_Data/""$rundir""/hisat2_out"
+mkdir "Mapped_Data/""$rundir""/dedup_out"
+
+for file in "Mapped_Data/""$rundir""/demultiplexed/"*s.fastq*
+do
+	file2="${file:(36+i):-9}"
+	fastp -w 4 -i "$file" -o "Mapped_Data/""$rundir""/hisat2_out/""$file2"".fastq.gz" -y -x -3
