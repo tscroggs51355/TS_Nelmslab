@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --job-name=runhisat2      # Job name
+#SBATCH --partition=batch              # Partition (queue) name, i.e., highmem_p
+#SBATCH --ntasks=1                          # Run a single task
+#SBATCH --cpus-per-task=28                  # Number of CPU cores per task
+#SBATCH --mem=180gb                          # Job memory request
+#SBATCH --time=72:00:00                     # Time limit hrs:min:sec
+#SBATCH --output=runhisat2.%j.out         # Standard output log
+#SBATCH --error=runhisat2.%j.err          # Standard error log
+#SBATCH --mail-type=END,FAIL                # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=taylor.strayhorn@uga.edu   # Where to send mail
+#SBATCH --export=NONE                       # do not load any env variables to compute node
+
+
+module load HISAT2/2.2.1-foss-2019b
+hisat2 -p 4 --dta --no-softclip -x maize_tran -U SRR1205303.fastq, SRR1205304.fastq, SRR1205305.fastq, SRR1205306.fastq, SRR1205307.fastq, SRR1205308.fastq, SRR1205309.fastq, SRR1205310.fastq, SRR1205311.fastq, SRR1205312.fastq, SRR1205313.fastq, SRR1205314.fastq, SRR1205315.fastq, SRR1205316.fastq, SRR1205317.fastq, SRR1205318.fastq, SRR1205319.fastq, SRR1205320.fastq, SRR1205321.fastq, SRR1205322.fastq, SRR1205323.fastq, SRR120534.fastq  | samtools view -bS > "Mapped_Data/""$rundir""/hisat2_out/""$file2""_unsorted.bam"
+
+
+for file in *.fastq.gz
+do
+  hisat2 -U "$file" | samtools view -bS > "${file:0:-9}"".bam"
+done
+
+for file in *.fastq.gz
+do
+  file2 = "${file:0:-9}"".bam"
+done
+
+echo "$file2"
