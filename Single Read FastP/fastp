@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH --job-name=run_fastp  # Job name
+#SBATCH --partition=batch              # Partition (queue) name, i.e., highmem_p
+#SBATCH --ntasks=1                          # Run a single task
+#SBATCH --cpus-per-task=28                  # Number of CPU cores per task
+#SBATCH --mem=30gb                       # Job memory request
+#SBATCH --time=72:00:00                     # Time limit hrs:min:sec
+#SBATCH --output=runfastpout         # Standard output log
+#SBATCH --error=runhfastprr          # Standard error log
+#SBATCH --mail-type=END,FAIL                # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=taylor.strayhorn@uga.edu   # Where to send mail
+#SBATCH --export=NONE                       # do not load any env variables to compute node
+
+module load fastp/0.23.2
+
+fastp -w 4 -i SRR1205303_1.fastq -o SRR1205303.fastq -y -x -3 
+fastp -w 4 -i SRR1205304_1.fastq -o SRR1205304.fastq -y -x -3 
+fastp -w 4 -i SRR1205305_1.fastq -o SRR1205305.fastq -y -x -3 
+fastp -w 4 -i SRR1205306_1.fastq -o SRR1205306.fastq -y -x -3 
+fastp -w 4 -i SRR1205307_1.fastq -o SRR1205307.fastq -y -x -3 
+fastp -w 4 -i SRR1205308_1.fastq -o SRR1205308.fastq -y -x -3 
+fastp -w 4 -i SRR1205309_1.fastq -o SRR1205309.fastq -y -x -3 
+fastp -w 4 -i SRR1205310_1.fastq -o SRR1205310.fastq -y -x -3 
+fastp -w 4 -i SRR1205311_1.fastq -o SRR1205311.fastq -y -x -3 
+fastp -w 4 -i SRR1205312_1.fastq -o SRR1205312.fastq -y -x -3 
+fastp -w 4 -i SRR1205313_1.fastq -o SRR1205313.fastq -y -x -3 
+fastp -w 4 -i SRR1205314_1.fastq -o SRR1205314.fastq -y -x -3 
+fastp -w 4 -i SRR1205315_1.fastq -o SRR1205315.fastq -y -x -3 
+fastp -w 4 -i SRR1205316_1.fastq -o SRR1205316.fastq -y -x -3 
+fastp -w 4 -i SRR1205317_1.fastq -o SRR1205317.fastq -y -x -3 
+fastp -w 4 -i SRR1205318_1.fastq -o SRR1205318.fastq -y -x -3 
+fastp -w 4 -i SRR1205319_1.fastq -o SRR1205319.fastq -y -x -3 
+fastp -w 4 -i SRR1205320_1.fastq -o SRR1205320.fastq -y -x -3 
+fastp -w 4 -i SRR1205321_1.fastq -o SRR1205321.fastq -y -x -3 
+fastp -w 4 -i SRR1205322_1.fastq -o SRR1205322.fastq -y -x -3 
+fastp -w 4 -i SRR1205323_1.fastq -o SRR1205323.fastq -y -x -3 
+fastp -w 4 -i SRR1205324_1.fastq -o SRR1205324.fastq -y -x -3 
