@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=sortbam      # Job name
+#SBATCH --job-name=sortbam5     # Job name
 #SBATCH --partition=batch              # Partition (queue) name, i.e., highmem_p
 #SBATCH --ntasks=1                          # Run a single task
 #SBATCH --cpus-per-task=28                  # Number of CPU cores per task
@@ -13,8 +13,46 @@
 
 module load SAMtools/1.16.1-GCC-11.3.0
 
-samtools sort -@ 8 -o *.sort.bam 
-samotools index *.sort.bam 
+samtools sort -@ 8 SRR1205304.bam -o SRR1205304.sort.bam  
+samtools sort -@ 8 SRR1205305.bam -o SRR1205305.sort.bam
+samtools sort -@ 8 SRR1205306.bam -o SRR1205306.sort.bam
+samtools sort -@ 8 SRR1205307.bam -o SRR1205307.sort.bam
+samtools sort -@ 8 SRR1205308.bam -o SRR1205308.sort.bam
+samtools sort -@ 8 SRR1205309.bam -o SRR1205309.sort.bam
+samtools sort -@ 8 SRR1205310.bam -o SRR12053010.sort.bam
+samtools sort -@ 8 SRR1205311.bam -o SRR12053011.sort.bam
+samtools sort -@ 8 SRR1205312.bam -o SRR12053012.sort.bam
+samtools sort -@ 8 SRR1205313.bam -o SRR12053013.sort.bam
+samtools sort -@ 8 SRR1205314.bam -o SRR12053014.sort.bam
+samtools sort -@ 8 SRR1205315.bam -o SRR12053015.sort.bam
+samtools sort -@ 8 SRR1205316.bam -o SRR12053016.sort.bam
+samtools sort -@ 8 SRR1205317.bam -o SRR12053017.sort.bam
+samtools sort -@ 8 SRR1205318.bam -o SRR12053018.sort.bam
+samtools sort -@ 8 SRR1205319.bam -o SRR12053019.sort.bam
+samtools sort -@ 8 SRR1205320.bam -o SRR12053020.sort.bam
+samtools sort -@ 8 SRR1205321.bam -o SRR12053021.sort.bam
+samtools sort -@ 8 SRR1205322.bam -o SRR12053022.sort.bam
+samtools sort -@ 8 SRR1205323.bam -o SRR12053023.sort.bam
+samtools sort -@ 8 SRR1205324.bam -o SRR12053024.sort.bam
 
-for file in *.sort.bam 
-echo "${file:(52+i)-4}" >> readcounts.txt 
+samtools index SRR1205304.sort.bam  
+samtools index SRR1205305.sort.bam
+samtools index SRR1205306.sort.bam
+samtools index SRR1205307.sort.bam
+samtools index SRR1205308.sort.bam
+samtools index SRR1205309.sort.bam
+samtools index SRR1205310.sort.bam
+samtools index SRR1205311.sort.bam
+samtools index SRR1205312.sort.bam
+samtools index SRR1205313.sort.bam
+samtools index SRR1205314.sort.bam
+samtools index SRR1205315.sort.bam
+samtools index SRR1205316.sort.bam
+samtools index SRR1205317.sort.bam
+samtools index SRR1205318.sort.bam
+samtools index SRR1205319.sort.bam
+samtools index SRR1205320.sort.bam
+samtools index SRR1205321.sort.bam
+samtools index SRR1205322.sort.bam
+samtools index SRR1205323.sort.bam
+samtools index SRR1205324.sort.bam
