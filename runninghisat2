@@ -7,7 +7,7 @@
 #SBATCH --time=72:00:00                     # Time limit hrs:min:sec
 #SBATCH --output=runhisat2.%j.out         # Standard output log
 #SBATCH --error=runhisat2.%j.err          # Standard error log
-#SBATCH --mail-type=END,FAIL                # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-type=END,FAIL                # Mail events (NONE, BEGIN, END, FAIL, ALLd)
 #SBATCH --mail-user=taylor.strayhorn@uga.edu   # Where to send mail
 #SBATCH --export=NONE                       # do not load any env variables to compute node
 
