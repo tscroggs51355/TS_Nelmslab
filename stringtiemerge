@@ -1,1 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=stringtiemerge_TS_1      # Job name
+#SBATCH --partition=batch              # Partition (queue) name, i.e., highmem_p
+#SBATCH --ntasks=1                          # Run a single task
+#SBATCH --cpus-per-task=28                  # Number of CPU cores per task
+#SBATCH --mem=30gb                          # Job memory request
+#SBATCH --time=72:00:00                     # Time limit hrs:min:sec
+#SBATCH --output=stringtiemerge_1.%j.out         # Standard output log
+#SBATCH --error=stringtiemerge_1.%j.err          # Standard error log
+#SBATCH --mail-type=END,FAIL                # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=taylor.strayhorn@uga.edu   # Where to send mail
+#SBATCH --export=NONE                       # do not load any env variables to compute node
 
+module load StringTie/2.1.7-GCC-8.3.0
+
+stringtie --rf --merge -p 4 -o stringtie_merged.gtf -G Zm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf mergelist.txt 
