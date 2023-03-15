@@ -1,0 +1,6 @@
+#look at the resulting transcripts 
+awk '{if($3=="transcript") print}' stringtie_merged.gtf | cut -f 1,4,9 | less
+
+#Compare the reference guided transcripts 
+gffcompare -r $RNA_REF_GTF -o gffcompare stringtie_merged.gtf
+cat gffcompare.stats 
