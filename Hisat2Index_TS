@@ -1,0 +1,3 @@
+
+
+hisat2-build --ss chrX.ss --exon chrX.exon chrX_data/genome/chrX.fa chrX_tran
