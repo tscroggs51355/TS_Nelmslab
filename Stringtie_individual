@@ -13,25 +13,25 @@
 #SBATCH --export=NONE                       # do not load any env variables to compute node
 
 module load StringTie/2.1.7-GCC-8.3.0
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205303.gtf -l SRR1205303 SRR1205303.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205304.gtf -l SRR1205304 SRR1205304.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205305.gtf -l SRR1205305 SRR1205305.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205306.gtf -l SRR1205306 SRR1205306.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205307.gtf -l SRR1205307 SRR1205307.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205308.gtf -l SRR1205308 SRR1205308.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205309.gtf -l SRR1205309 SRR1205309.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205310.gtf -l SRR1205310 SRR1205310.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205311.gtf -l SRR1205311 SRR1205311.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205312.gtf -l SRR1205312 SRR1205312.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205313.gtf -l SRR1205313 SRR1205313.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205314.gtf -l SRR1205314 SRR1205314.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205315.gtf -l SRR1205315 SRR1205315.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205316.gtf -l SRR1205316 SRR1205316.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205317.gtf -l SRR1205317 SRR1205317.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205318.gtf -l SRR1205318 SRR1205318.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205319.gtf -l SRR1205319 SRR1205319.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205320.gtf -l SRR1205320 SRR1205320.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205321.gtf -l SRR1205321 SRR1205321.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205322.gtf -l SRR1205322 SRR1205322.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205323.gtf -l SRR1205323 SRR1205323.sort.bam
-stringtie -p 4 -G GZm-B73-REFERENCE-NAM-5.0_Zm00001eb.1.gtf --fr -o SRR1205324.gtf -l SRR1205324 SRR1205324.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf --fr -o SRR1205303.gtf -l SRR1205303 SRR1205303.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205304.gtf -l SRR1205304 SRR1205304.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205305.gtf -l SRR1205305 SRR1205305.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205306.gtf -l SRR1205306 SRR1205306.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205307.gtf -l SRR1205307 SRR1205307.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205308.gtf -l SRR1205308 SRR1205308.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205309.gtf -l SRR1205309 SRR1205309.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205310.gtf -l SRR1205310 SRR1205310.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205311.gtf -l SRR1205311 SRR1205311.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205312.gtf -l SRR1205312 SRR1205312.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205313.gtf -l SRR1205313 SRR1205313.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205314.gtf -l SRR1205314 SRR1205314.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205315.gtf -l SRR1205315 SRR1205315.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205316.gtf -l SRR1205316 SRR1205316.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205317.gtf -l SRR1205317 SRR1205317.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205318.gtf -l SRR1205318 SRR1205318.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205319.gtf -l SRR1205319 SRR1205319.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205320.gtf -l SRR1205320 SRR1205320.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205321.gtf -l SRR1205321 SRR1205321.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205322.gtf -l SRR1205322 SRR1205322.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205323.gtf -l SRR1205323 SRR1205323.sort.bam
+stringtie -p 4 -G Maize_Reference_Jaime.gtf  --fr -o SRR1205324.gtf -l SRR1205324 SRR1205324.sort.bam
