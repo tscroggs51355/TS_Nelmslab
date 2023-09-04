@@ -13,7 +13,26 @@
 
 
 module load HISAT2/2.2.1-foss-2019b
-hisat2 -p 4 --dta --no-softclip -x maize_tran -U SRR1205303.fastq, SRR1205304.fastq, SRR1205305.fastq, SRR1205306.fastq, SRR1205307.fastq, SRR1205308.fastq, SRR1205309.fastq, SRR1205310.fastq, SRR1205311.fastq, SRR1205312.fastq, SRR1205313.fastq, SRR1205314.fastq, SRR1205315.fastq, SRR1205316.fastq, SRR1205317.fastq, SRR1205318.fastq, SRR1205319.fastq, SRR1205320.fastq, SRR1205321.fastq, SRR1205322.fastq, SRR1205323.fastq, SRR120534.fastq  | samtools view -bS > "Mapped_Data/""$rundir""/hisat2_out/""$file2""_unsorted.bam"
+
+mkdir "Mapped_Data/hisat2_out"
+
+for file in "Mapped_Data/demultiplexed/"*s.fastq*
+do
+	file2="${file:26:-9}"
+
+if [ ! -f "Mapped_Data/hisat2_out/""$file2"".bam" ]; then
+
+	fastp -w 4 -i "$file" -o "Mapped_Data/hisat2_out/""$file2"".fastq.gz" -y -x -3 -a AAAAAAAAAAAA
+	
+	hisat2 -p 4 --dta -x Genome/Zm5UNos_noSS -U "Mapped_Data/hisat2_out/""$file2"".fastq.gz" | samtools view -bS -> "Mapped_Data/hisat2_out/""$file2""_unsorted.bam"
+	
+	samtools sort -@ 8 "Mapped_Data/hisat2_out/""$file2""_unsorted.bam" -o "Mapped_Data/hisat2_out/""$file2"".bam"
+	
+	find "Mapped_Data/hisat2_out/" -name "*fastq.gz" -delete
+	find "Mapped_Data/hisat2_out/" -name "*_unsorted.bam" -delete
+fi
+done
+
 
 
 for file in *.fastq.gz
