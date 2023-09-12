@@ -34,6 +34,7 @@ done
 conda deactivate
 
 #############################
+source activate /home/tms51355/Fastq-Multx/
 
 for file in "Raw_Data/"*_R1_*.gz
 do
