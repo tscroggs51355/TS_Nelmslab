@@ -39,7 +39,7 @@ source activate /home/tms51355/Fastq-Multx/
 
 for file in "Raw_Data/"*_R1_*.gz
 do
-	file2="${file:9:-16}"
+file2="${file:0:10}${file:(-16)}"
 
 if [ ! -f "Mapped_Data/demultiplexed/""$file2""_dT-1s.fastq.gz" ]; then
 module load fastp/0.23.2
